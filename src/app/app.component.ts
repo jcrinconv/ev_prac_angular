@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+
+const VISTAS = ['home', 'new_vehicles', 'pre_owned_vehicles'] as const;
+type Vista = typeof VISTAS[number];
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
-  title = 'ev_prac_angular';
+  title = 'TuSegundazo.com';
+  vistaSeleccionada: Vista = 'pre_owned_vehicles';
+  mostrarVista(v: Vista) { this.vistaSeleccionada = v; }
 }
