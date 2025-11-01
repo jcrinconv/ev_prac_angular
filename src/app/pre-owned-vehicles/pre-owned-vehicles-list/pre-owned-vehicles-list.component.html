@@ -17,4 +17,8 @@
         <td>{{ vehicle.modelo }}</td>
       </tr>
   </table>
+
+  <div *ngFor="let marca of getVehiclesPerMarca() | keyvalue">
+    <div>Total {{ marca.key }}: {{ marca.value }}</div>
+  </div>
 </div>

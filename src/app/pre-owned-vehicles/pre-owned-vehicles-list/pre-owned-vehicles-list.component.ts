@@ -19,4 +19,15 @@ export class PreOwnedVehiclesListComponent implements OnInit {
     });
   }
 
+  getVehiclesPerMarca(): { [marca: string]: number } {
+    const vehiclesPerMarca: { [marca: string]: number } = {};
+    this.preOwnedVehicles.forEach(vehicle => {
+      if (vehiclesPerMarca[vehicle.marca]) {
+        vehiclesPerMarca[vehicle.marca]++;
+      } else {
+        vehiclesPerMarca[vehicle.marca] = 1;
+      }
+    });
+    return vehiclesPerMarca;
+  }
 }
