@@ -1,5 +1,5 @@
 export class Vehicle {
-  id: string;
+  id: number;
   marca: string;
   linea: string;
   referencia: string;
@@ -9,7 +9,7 @@ export class Vehicle {
   imagen: string;
 
   constructor(
-    id: string,
+    id: number,
     marca: string,
     linea: string,
     referencia: string,
